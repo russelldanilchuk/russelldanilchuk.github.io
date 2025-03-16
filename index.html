@@ -4,19 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
     <title>Russell Danilchuk | Aerospace Engineer</title>
 </head>
 <body>
     <div class="hero">
         <h1 class="name">
-            <span class="first-name">Russell</span>
-            <span class="last-name">Danilchuk</span>
+            <span class="first-name">Russell</span><span class="last-name">Danilchuk</span>
         </h1>
         <ul class="roles">
-            <li><span class="role-number">(01)</span> Aerospace Engineer</li>
-            <li><span class="role-number">(02)</span> Aspiring Data Scientist</li>
-            <li><span class="role-number">(03)</span> Educator</li>
+            <li><span class="role-number">(01)</span> <a>Aerospace Engineer</a></li>
+            <li><span class="role-number">(02)</span> <a>Aspiring Data Scientist</a></li>
+            <li><span class="role-number">(03)</span> <a>Educator</a></li>
         </ul>
     </div>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        ☰ <!-- Unicode character for a hamburger menu -->
+    </div>
+
+    <!-- Full-Screen Menu -->
+    <div class="menu-overlay">
+        <div class="menu-close" onclick="toggleMenu()">×</div> <!-- Close button -->
+        <ul class="menu-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </div>
+
 </body>
 </html>

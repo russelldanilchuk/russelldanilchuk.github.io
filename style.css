@@ -2,7 +2,7 @@
 body {
     background-color: #0a0a0a;
     color: white;
-    font-family: 'CMU Serif', serif;
+    font-family: 'Libre Baskerville', serif;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -18,40 +18,164 @@ body {
 
 /* Name Styling */
 .name {
-    font-size: 8vw; /* Responsive large font */
+    font-size: 13vw; /* Responsive large font */
     margin: 0;
     line-height: 1;
 }
 
 /* First and Last Name Styling */
 .first-name {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
+    letter-spacing: -15px; /* Adjust the value as needed */
 }
 
 .last-name {
-    font-family: 'CMU Serif', serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: italic;
+    letter-spacing: -15px; /* Adjust the value as needed */
+    opacity: 0.5;
+}
+
+/* Adjust letter spacing for smaller screens */
+@media (max-width: 1024px) {
+    .first-name, .last-name {
+        letter-spacing: -10px; /* Slightly reduce spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .first-name, .last-name {
+        letter-spacing: -5px; /* Reduce spacing even more */
+    }
+}
+
+@media (max-width: 480px) {
+    .first-name, .last-name {
+        letter-spacing: -2px; /* Very tight spacing for small screens */
+    }
 }
 
 /* Roles List */
 .roles {
     list-style: none;
     padding: 0;
-    font-family: 'Helvetica', sans-serif;
-    font-size: 1.5vw;
     margin-top: 20px;
 }
 
 .roles li {
+    font-size: 2.2vw;
+    font-family: 'Arial', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
 }
 
+/* Role Numbers */
 .role-number {
+    font-size: 1vw;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 300; /* Makes the numbers thinner */
     font-style: italic;
     margin-right: 10px;
-    opacity: 0.7;
+    opacity: 0.5;
+}
+
+.roles a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out;
+}
+
+.roles a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease-in-out;
+    z-index: -1; /* Moves it behind the text */
+}
+
+.roles a:hover {
+    color: #0a0a0a;
+}
+
+.roles a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Full-Screen Overlay Menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Close Button */
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu Links */
+.menu-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-links li {
+    margin: 20px 0;
+}
+
+.menu-links a {
+    font-size: 3rem; /* Large links */
+    font-family: 'Baskerville', 'Libre Baskerville', serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+    color: gray;
+}
+
+/* Active class to show menu */
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
