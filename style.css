@@ -1,0 +1,57 @@
+/* Apply full dark background */
+body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'CMU Serif', serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Main hero section */
+.hero {
+    text-align: center;
+}
+
+/* Name Styling */
+.name {
+    font-size: 8vw; /* Responsive large font */
+    margin: 0;
+    line-height: 1;
+}
+
+/* First and Last Name Styling */
+.first-name {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+}
+
+.last-name {
+    font-family: 'CMU Serif', serif;
+    font-style: italic;
+}
+
+/* Roles List */
+.roles {
+    list-style: none;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.5vw;
+    margin-top: 20px;
+}
+
+.roles li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.role-number {
+    font-style: italic;
+    margin-right: 10px;
+    opacity: 0.7;
+}
