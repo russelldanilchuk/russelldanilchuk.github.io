@@ -1,181 +1,231 @@
-/* Apply full dark background */
 body {
-    background-color: #0a0a0a;
-    color: white;
-    font-family: 'Libre Baskerville', serif;
     margin: 0;
+    background-color: white;
+    color: black;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+  }
+  
+  .nav-left,
+  .nav-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  
+  .nav-right {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-/* Main hero section */
-.hero {
-    text-align: center;
-}
-
-/* Name Styling */
-.name {
-    font-size: 13vw; /* Responsive large font */
-    margin: 0;
-    line-height: 1;
-}
-
-/* First and Last Name Styling */
-.first-name {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    letter-spacing: -15px; /* Adjust the value as needed */
-}
-
-.last-name {
-    font-family: 'Libre Baskerville', serif;
-    font-style: italic;
-    letter-spacing: -15px; /* Adjust the value as needed */
-    opacity: 0.5;
-}
-
-/* Adjust letter spacing for smaller screens */
-@media (max-width: 1024px) {
-    .first-name, .last-name {
-        letter-spacing: -10px; /* Slightly reduce spacing */
-    }
-}
-
-@media (max-width: 768px) {
-    .first-name, .last-name {
-        letter-spacing: -5px; /* Reduce spacing even more */
-    }
-}
-
-@media (max-width: 480px) {
-    .first-name, .last-name {
-        letter-spacing: -2px; /* Very tight spacing for small screens */
-    }
-}
-
-/* Roles List */
-.roles {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.roles li {
-    font-size: 2.2vw;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-/* Role Numbers */
-.role-number {
-    font-size: 1vw;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 300; /* Makes the numbers thinner */
-    font-style: italic;
-    margin-right: 10px;
-    opacity: 0.5;
-}
-
-.roles a {
-    position: relative;
-    color: #ffffff;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .nav-left a,
+  .nav-right a {
+    color: black;
     text-decoration: none;
-    padding: 0 .25rem;
-    transition: color .3s ease-in-out;
-}
+    transition: color 0.3s;
+  }
+  
+  .nav-left a:hover,
+  .nav-right a:hover {
+    color: #888;
+  }
+  
+  /* Tablet and up */
+  @media (min-width: 600px) {
+    nav {
+      flex-wrap: nowrap;
+    }
+  
+    .nav-left {
+      flex: 1;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  
+    .nav-right {
+      flex: 1;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
 
-.roles a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .3s ease-in-out;
-    z-index: -1; /* Moves it behind the text */
-}
-
-.roles a:hover {
-    color: #0a0a0a;
-}
-
-.roles a:hover::after {
-    transform: scaleX(1);
-}
-
-/* Hamburger Menu Icon */
-.hamburger {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* Full-Screen Overlay Menu */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-}
-
-/* Close Button */
-.menu-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-}
-
-/* Menu Links */
-.menu-links {
-    list-style: none;
-    padding: 0;
+  
+  /* Center content and constrain width */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Grid-based feature boxes */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Box styling */
+  .feature-box {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
     text-align: center;
-}
-
-.menu-links li {
-    margin: 20px 0;
-}
-
-.menu-links a {
-    font-size: 3rem; /* Large links */
-    font-family: 'Baskerville', 'Libre Baskerville', serif;
-    font-weight: bold;
     text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out;
-}
+    color: black;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  
+  .feature-box h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-box:hover {
+    border-color: #888;
+    color: #888;
+  }
 
-.menu-links a:hover {
-    color: gray;
-}
+  
+/* -------------------------------- */
+/* Course Catalog Grid & Tiles     */
+/* -------------------------------- */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 1rem;
+  }
+  
+  .course-tile {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .course-tile:hover {
+    border-color: #888;
+    background-color: #f9f9f9;
+  }
+  
+  /* -------------------------------- */
+  /* Book Viewer Visibility Toggle    */
+  /* -------------------------------- */
+  /* initially hide the viewer */
+  #book-viewer {
+    display: none;
+    /* it’s a flex container in your HTML scaffold */
+    /* you can also define it here if needed: */
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: calc(100vh - 60px);
+  }
+  
+  /* -------------------------------- */
+  /* Back Button                      */
+  /* -------------------------------- */
+  #back-button {
+    display: block;
+    margin: 1rem 0;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  #back-button:hover {
+    color: #555;
+  }
 
-/* Active class to show menu */
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+  .learning-container {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: calc(100vh - 60px); /* adjust if nav is taller */
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    width: 240px;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  /* Search box in sidebar */
+  #search {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* TOC styling */
+  #toc ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  #toc li {
+    margin-bottom: 0.5rem;
+  }
+  #toc li.level-2 { margin-left: 1rem; }
+  #toc li.level-3 { margin-left: 2rem; }
+  
+  /* Note list */
+  #note-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  #note-list li + li {
+    margin-top: 0.5rem;
+  }
+  #note-list a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+  }
+  #note-list a:hover {
+    color: #888;
+  }
+  
+  /* Content area */
+  #content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  
+  /* Constrain and center content (match homepage) */
+.container {
+    max-width: 900px;    /* adjust as needed */
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Force a 3-col grid on desktop, auto-collapse on smaller screens */
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* One column on narrow viewports */
+  @media (max-width: 768px) {
+    .course-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

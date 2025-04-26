@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="script.js?v=1.0"></script>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
-    <title>Russell Danilchuk | Aerospace Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Russell Danilchuk</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="hero">
-        <h1 class="name">
-            <span class="first-name">Russell</span><span class="last-name">Danilchuk</span>
-        </h1>
-        <ul class="roles">
-            <li><span class="role-number">(01)</span> <a>Aerospace Engineer</a></li>
-            <li><span class="role-number">(02)</span> <a>Aspiring Data Scientist</a></li>
-            <li><span class="role-number">(03)</span> <a>Educator</a></li>
-        </ul>
+  <nav>
+    <div class="nav-left">
+      <a href="index.html">Russell Danilchuk</a>
     </div>
-
-    <!-- Hamburger Menu Icon -->
-    <div class="hamburger" onclick="toggleMenu()">
-        ☰ <!-- Unicode character for a hamburger menu -->
+    <div class="nav-right">
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="blog.html">Blog</a>
+      <a href="learning.html">Learning</a>
+      <a href="contact.html">Contact</a>
     </div>
+  </nav>
 
-    <!-- Full-Screen Menu -->
-    <div class="menu-overlay">
-        <div class="menu-close" onclick="toggleMenu()">×</div> <!-- Close button -->
-        <ul class="menu-links">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#blog">Blog</a></li>
-        </ul>
-    </div>
+  <main class="container">
+    <section class="about">
+      <h1>Howdy! I'm Russell.</h1>
+      <p>Welcome to my webpage. I study Aerospace Engineering at the Georgia Institute of Technology.</p>
+    </section>
 
+    <section class="features">
+      <a href="projects.html" class="feature-box">
+        <h2>Recent Project</h2>
+        <p>Brief description about project</p>
+      </a>
+      <a href="blog.html" class="feature-box">
+        <h2>Recent Blog</h2>
+        <p>Brief description about blog</p>
+      </a>
+      <a href="learning.html" class="feature-box">
+        <h2>Latest Learning</h2>
+        <p>Brief description about learning</p>
+      </a>
+    </section>
+  </main>
 </body>
 </html>

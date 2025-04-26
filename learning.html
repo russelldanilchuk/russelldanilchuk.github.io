@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning – Russell Danilchuk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="index.html">Russell Danilchuk</a>
+    </div>
+    <div class="nav-right">
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="blog.html">Blog</a>
+      <a href="learning.html">Learning</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Container to center and constrain width -->
+    <div class="container">
+      <!-- Course Catalog -->
+      <section id="catalog">
+        <h1>My Courses</h1>
+        <div class="course-grid">
+          <div class="course-tile" data-file="notes/test.md">
+            <h2>History of Flight</h2>
+            <p>Key concepts and notes on the history of flight.</p>
+          </div>
+          <!-- example additional tiles -->
+          <div class="course-tile" data-file="notes/control-systems.md">
+            <h2>Control Systems</h2>
+            <p>Stability and feedback fundamentals.</p>
+          </div>
+          <div class="course-tile" data-file="notes/aerodynamics.md">
+            <h2>Aerodynamics</h2>
+            <p>Airflow and lift analysis.</p>
+          </div>
+          <div class="course-tile" data-file="notes/structures.md">
+            <h2>Structures</h2>
+            <p>Aircraft structural analysis.</p>
+          </div>
+          <div class="course-tile" data-file="notes/propulsion.md">
+            <h2>Propulsion</h2>
+            <p>Engine performance and thermodynamics.</p>
+          </div>
+          <div class="course-tile" data-file="notes/flight-testing.md">
+            <h2>Flight Testing</h2>
+            <p>Test plans and data analysis.</p>
+          </div>
+        </div>
+
+        <h2>All Courses</h2>
+        <ul id="course-list">
+          <li><a href="#" data-file="notes/test.md">History of Flight</a></li>
+          <li><a href="#" data-file="notes/control-systems.md">Control Systems</a></li>
+          <li><a href="#" data-file="notes/aerodynamics.md">Aerodynamics</a></li>
+          <li><a href="#" data-file="notes/structures.md">Structures</a></li>
+          <li><a href="#" data-file="notes/propulsion.md">Propulsion</a></li>
+          <li><a href="#" data-file="notes/flight-testing.md">Flight Testing</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Book Viewer (hidden initially) -->
+    <section id="book-viewer" class="learning-container" style="display: none;">
+      <aside id="sidebar">
+        <input id="search" type="text" placeholder="Search notes…" />
+        <nav id="toc"></nav>
+        <ul id="note-list"></ul>
+        <button id="back-button">← Back to Courses</button>
+      </aside>
+      <article id="content"></article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
